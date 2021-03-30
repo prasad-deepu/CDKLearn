@@ -19,7 +19,9 @@ setuptools.setup(
     packages=setuptools.find_packages(where="cdk_learn"),
 
     install_requires=[
-        "aws-cdk.core==1.95.1",
+        "aws-cdk.core==1.95.1","aws-cdk.aws_s3",
+        "pyboto3",
+        "boto3"
     ],
 
     python_requires=">=3.6",
