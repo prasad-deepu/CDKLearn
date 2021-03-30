@@ -24,6 +24,22 @@ class CdkLearnStack(cdk.Stack):
             "mybucketid",
             bucket_name = "prasadrenmuka3010",
             versioned=True,
-            encryption=_s3.BucketEncryption.KMS_MANAGED
+            encryption=_s3.BucketEncryption.S3_MANAGED,
+            block_public_access=_s3.BlockPublicAccess.BLOCK_ALL
+
+        )
+
+        mybuck = _s3.Bucket(
+            self,
+            "myBuckId",
+            bucket_name="renukadeepu3003"
+        )
+
+        output = core.CfnOutput(
+            self,
+            "MyOutput1",
+            value=mybuck.bucket_name,
+            description=f"My First  CDK Bucker",
+            export_name="MyOutput1"
 
         )
